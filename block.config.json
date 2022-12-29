@@ -1,0 +1,13 @@
+{
+  "name": "sample_shield_database",
+  "type": "shared-fn",
+  "source": {
+    "https": "https://github.com/Digambaran/sample_shield_database",
+    "ssh": "git@github.com:Digambaran/sample_shield_database.git"
+  },
+  "language": "nodejs",
+  "start": "node index.js",
+  "build": "",
+  "postPull": "npm i",
+  "standAloneBlock": false
+}
