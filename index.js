@@ -1,7 +1,10 @@
 import { PrismaClient } from "@prisma/client";
-// import { env } from "@appblocks/node-sdk";
+import { env } from "@appblocks/node-sdk";
 
-// env.init();
+env.init();
+console.log("--------------");
+console.log(process.env);
+console.log("--------------");
 
 const prisma = new PrismaClient({
   datasources: { db: { url: process.env.DATABASE_URL } },
@@ -11,5 +14,4 @@ const prisma = new PrismaClient({
       : ["error"],
 });
 
-console.log("::P::", prisma);
 export default { prisma, key: "value" };

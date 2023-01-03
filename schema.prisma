@@ -30,7 +30,7 @@ model Users {
 
 model Providers {
   provider_id   String   @id @db.VarChar(255)
-  provider_name String   @unique @db.VarChar(255)
+  provider_name String   @db.VarChar(255)
   created_at    DateTime
   updated_at    DateTime
   deleted_at    DateTime
