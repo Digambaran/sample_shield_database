@@ -22,10 +22,11 @@ env.init();
 
 const prisma = new PrismaClient({
   datasources: { db: { url: process.env.DATABASE_URL } },
-  log:
-    process.env.NODE_ENV === "development"
-      ? ["query", "error", "warn"]
-      : ["error"],
+  log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
+});
+prisma.$on("beforeExit", async () => {
+  console.log("beforeExit hook");
+  // PrismaClient still available
 });
 
 export default { prisma, redis };
